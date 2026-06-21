@@ -1,0 +1,30 @@
+# IDE
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Sensitive files
+.env*
+*.env
+*.pem
+*.key
+*.cert
+*.crt
+
+# IDEs
+.vscode/
+*.iws
+*.ipr
+
+# Antigravity
+.gemini/
+.agents/
+
+# Samples
+.sample*
