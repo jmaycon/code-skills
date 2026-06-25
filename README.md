@@ -10,3 +10,8 @@ Global install.
 ## Test
 Ask: "Use no-fluff".
 Wait terse reply.
+
+
+## Inspiration
+
+- `review` is inspired on https://github.com/kunchenguid/no-mistakes 
