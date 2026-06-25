@@ -14,6 +14,7 @@ Read or update `docs/project_notes.md` when user says:
 - "update notes"
 
 ## Core Directives
+- **"It is not about being long, it is about being useful."**
 - **Read on start**. Understand project context, folders, and patterns before acting.
 - **Update on failure**. Document mistakes, errors, and corrected approaches. Learn from frustration.
 - **Update on repetition**. If user repeats instructions, add to patterns with high weight.
