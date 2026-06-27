@@ -21,24 +21,31 @@ Strict rules for Spring DI & properties.
 * Define properties as Java `record` inside the Config class.
 * Bind via `@ConfigurationProperties`.
 * Use multiple Config classes for different hierarchy levels in `application.yaml`.
+* Place nested `record` definitions at bottom of enclosing class.
+* NEVER hardcode defaults in Config logic (e.g., `prop != null ? prop : "default"`). Let Spring inject or fail.
 
 ### Example
 ```java
 @Configuration
 @EnableConfigurationProperties(MyConfig.Properties.class)
 @RequiredArgsConstructor
-public class MyConfig {
+class MyConfig {
     private final Properties properties;
 
-    @ConfigurationProperties(prefix = "my.app.feature")
-    public record Properties(String propName, int timeout) {}
-
     @Bean
-    public MyService myService() {
+    MyService myService() {
         return new MyService(properties.propName());
     }
+
+    @ConfigurationProperties(prefix = "my.app.feature")
+    record Properties(String propName, int timeout) {}
 }
 ```
 
 ## 4. Exceptions
 * Direct binding allowed ONLY when forced by annotation: `@Scheduled`, `@KafkaListener`, etc.
+
+## 5. Visibility
+* Default to `private`.
+* Use package-private if needed.
+* Use `public` ONLY if strictly required.
