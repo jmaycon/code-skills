@@ -53,6 +53,7 @@ class MyConfig {
 ## 6. Imports
 * Always use fully qualified imports (e.g., `import java.util.List;`), NO wildcard imports (`import java.util.*;`) unless there is a conflict.
 * Use static imports when it improves readability, but ensure it doesn't create confusion.
+* NEVER use fully qualified class names directly in the code (e.g., inline in method parameters or field declarations like `public MessageListenerAdapter listenerAdapter(com.sdrc.agent.service.EngramSubscriber subscriber)`). Always import the class and use the simple class name instead.
 
 ## 7. Variables
 * Use `var` whenever the type is explicitly clear on the right side of the assignment (in the current line).
