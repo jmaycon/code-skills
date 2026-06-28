@@ -1,9 +1,9 @@
 ---
-name: spring-config
+name: spring
 description: Strict Spring configuration. Constructor injection, Lombok, Config classes, Record properties. No @Value.
 ---
 
-# Spring Config
+# Spring
 
 Strict rules for Spring DI & properties.
 
@@ -47,5 +47,13 @@ class MyConfig {
 
 ## 5. Visibility
 * Default to `private`.
-* Use package-private if needed.
-* Use `public` ONLY if strictly required.
+* Use package-private if needed. This includes Spring classes (`@RestController`, `@Service`, `@Configuration`) and their methods (e.g. `@GetMapping`, `@Bean`). Spring does NOT require them to be `public`.
+* Use `public` ONLY if strictly required for cross-package access.
+
+## 6. Imports
+* Always use fully qualified imports (e.g., `import java.util.List;`), NO wildcard imports (`import java.util.*;`) unless there is a conflict.
+* Use static imports when it improves readability, but ensure it doesn't create confusion.
+
+## 7. Variables
+* Use `var` whenever the type is explicitly clear on the right side of the assignment (in the current line).
+* DO NOT use `var` when assigning from a method return, as the type is not immediately obvious.
