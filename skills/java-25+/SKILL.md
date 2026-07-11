@@ -42,3 +42,10 @@ import module java.sql;
 
 * JDK < 25 -> abort.
 * Aliasing -> fail.
+
+## 5. Nullability & Builders
+
+* **JSpecify + Lombok `@Builder`**: When the project uses JSpecify, if Lombok `@Builder` is used, all required properties MUST be annotated with `lombok.NonNull`.
+
+See also: [Spring Skill](../spring/SKILL.md)
+
