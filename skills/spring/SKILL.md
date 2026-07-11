@@ -44,3 +44,6 @@ class MyConfig {
 
 ## 4. Exceptions
 * Direct binding allowed ONLY when forced by annotation: `@Scheduled`, `@KafkaListener`, etc.
+
+See also: [Java 25+ Skill](../java-25+/SKILL.md)
+
