@@ -19,6 +19,7 @@ Strict rules for Spring DI & properties.
 ## 3. Properties
 * NEVER use `@Value`.
 * Define properties as Java `record` inside the Config class.
+* Always annotate configuration record properties with Lombok `@NonNull` (e.g. `@NonNull String propName`) to enforce non-nullability.
 * Bind via `@ConfigurationProperties`.
 * Use multiple Config classes for different hierarchy levels in `application.yaml`.
 * Place nested `record` definitions at bottom of enclosing class.
@@ -38,7 +39,7 @@ class MyConfig {
     }
 
     @ConfigurationProperties(prefix = "my.app.feature")
-    record Properties(String propName, int timeout) {}
+    record Properties(@NonNull String propName, int timeout) {}
 }
 ```
 
