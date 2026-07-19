@@ -47,5 +47,9 @@ import module java.sql;
 
 * **JSpecify + Lombok `@Builder`**: When the project uses JSpecify, if Lombok `@Builder` is used, all required properties MUST be annotated with `lombok.NonNull`.
 
+## 6. Structure & Ordering
+
+* **Static Methods**: Static methods MUST always be placed at the bottom of the class or record to keep constructor and instance logic clean and readable.
+
 See also: [Spring Skill](../spring/SKILL.md)
 
